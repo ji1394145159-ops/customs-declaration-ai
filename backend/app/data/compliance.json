@@ -1,0 +1,195 @@
+{
+  "US": {
+    "name": "美国",
+    "required_fields": [
+      {"name": "进口商名称", "default": ""},
+      {"name": "进口商地址", "default": ""},
+      {"name": "买方名称", "default": ""},
+      {"name": "买方地址", "default": ""},
+      {"name": "交易方式", "default": "FOB"},
+      {"name": "运费", "default": ""},
+      {"name": "保险费", "default": ""},
+      {"name": "入境口岸", "default": ""},
+      {"name": "报关行", "default": ""}
+    ],
+    "special_categories": {
+      "锂电池": {
+        "notes": [
+          "锂电池出口至美国需提供UN38.3测试报告",
+          "需提供MSDS（材料安全数据表）",
+          "需符合DOT运输规定",
+          "需提供1.2米跌落测试报告（锂金属电池）",
+          "外包装需贴有锂电池警告标签"
+        ],
+        "extra_fields": [
+          {"name": "UN38.3认证编号", "default": "待提供"},
+          {"name": "MSDS文件编号", "default": "待提供"},
+          {"name": "电池类型", "default": ""},
+          {"name": "额定容量(Wh)", "default": ""},
+          {"name": "额定电压(V)", "default": ""}
+        ]
+      },
+      "光伏": {
+        "notes": [
+          "光伏组件出口美国需关注Section 201关税",
+          "需提供原产地证明",
+          "需符合UL认证要求（UL 1703/UL 61730）",
+          "可能需要反倾销/反补贴税保证金"
+        ],
+        "extra_fields": [
+          {"name": "UL认证编号", "default": "待提供"},
+          {"name": "功率(W)", "default": ""},
+          {"name": "组件类型", "default": ""}
+        ]
+      },
+      "电子配件": {
+        "notes": [
+          "电子配件需符合FCC认证要求",
+          "需提供FCC ID（如适用）"
+        ],
+        "extra_fields": [
+          {"name": "FCC ID", "default": "待确认"}
+        ]
+      }
+    },
+    "general_notes": [
+      "所有进口商品需在美国海关CBP系统中申报",
+      "需提供Commercial Invoice（商业发票）",
+      "需提供Packing List（装箱单）",
+      "低价值货物（<$800）可能免税"
+    ]
+  },
+  "EU": {
+    "name": "欧盟",
+    "required_fields": [
+      {"name": "进口商EORI号", "default": ""},
+      {"name": "进口商名称", "default": ""},
+      {"name": "交易方式", "default": "FOB"},
+      {"name": "入境口岸", "default": ""},
+      {"name": "增值税号", "default": ""}
+    ],
+    "special_categories": {
+      "锂电池": {
+        "notes": [
+          "锂电池出口至欧盟需符合EU电池法规（Battery Regulation 2023/1542）",
+          "需提供UN38.3测试报告",
+          "需提供CE认证",
+          "需提供电池护照（Battery Passport）- 2027年起强制",
+          "需符合REACH法规"
+        ],
+        "extra_fields": [
+          {"name": "CE认证编号", "default": "待提供"},
+          {"name": "UN38.3认证编号", "default": "待提供"},
+          {"name": "REACH注册号", "default": "待确认"}
+        ]
+      },
+      "光伏": {
+        "notes": [
+          "光伏组件需符合IEC 61215/IEC 61730标准",
+          "需提供CE认证",
+          "需提供TÜV认证（如适用）",
+          "需符合欧盟生态设计指令"
+        ],
+        "extra_fields": [
+          {"name": "CE认证编号", "default": "待提供"},
+          {"name": "IEC测试报告编号", "default": "待提供"}
+        ]
+      },
+      "电子配件": {
+        "notes": [
+          "电子设备需符合CE认证要求",
+          "需符合WEEE指令（废弃电子设备）",
+          "需符合RoHS指令（有害物质限制）"
+        ],
+        "extra_fields": [
+          {"name": "CE认证编号", "default": "待提供"},
+          {"name": "WEEE注册号", "default": "待确认"}
+        ]
+      }
+    },
+    "general_notes": [
+      "欧盟27国统一关税区，一份申报可覆盖全部成员国",
+      "需提供EUR.1原产地证书（如适用优惠关税）",
+      "增值税率因成员国而异（17%-27%）",
+      "需符合欧盟REACH法规（化学品注册）"
+    ]
+  },
+  "ID": {
+    "name": "印度尼西亚",
+    "required_fields": [
+      {"name": "进口商名称", "default": ""},
+      {"name": "进口商许可证号(API)", "default": ""},
+      {"name": "交易方式", "default": "FOB"},
+      {"name": "入境口岸", "default": ""},
+      {"name": "进口目的", "default": "商业进口"}
+    ],
+    "special_categories": {
+      "锂电池": {
+        "notes": [
+          "锂电池进口印尼需SNI认证（印尼国家标准）",
+          "需提供UN38.3测试报告",
+          "需提供MSDS",
+          "需获得印尼能效标签"
+        ],
+        "extra_fields": [
+          {"name": "SNI认证编号", "default": "待提供"},
+          {"name": "UN38.3认证编号", "default": "待提供"}
+        ]
+      },
+      "电子配件": {
+        "notes": [
+          "电子设备需SDPPI认证（印尼通信设备认证）",
+          "需Postel认证（如含无线功能）"
+        ],
+        "extra_fields": [
+          {"name": "SDPPI认证编号", "default": "待确认"}
+        ]
+      }
+    },
+    "general_notes": [
+      "印尼海关使用HS Code 2022版本",
+      "进口关税税率0%-150%不等",
+      "需缴纳增值税11%",
+      "需缴纳所得税（PPh）2.5%-7.5%",
+      "部分商品需要进口许可（Lartas）"
+    ]
+  },
+  "VN": {
+    "name": "越南",
+    "required_fields": [
+      {"name": "进口商名称", "default": ""},
+      {"name": "进口商税号", "default": ""},
+      {"name": "交易方式", "default": "FOB"},
+      {"name": "入境口岸", "default": ""},
+      {"name": "进口许可证号", "default": ""}
+    ],
+    "special_categories": {
+      "锂电池": {
+        "notes": [
+          "锂电池进口越南需提供UN38.3测试报告",
+          "需符合越南QCVN技术标准",
+          "需提供MSDS"
+        ],
+        "extra_fields": [
+          {"name": "UN38.3认证编号", "default": "待提供"},
+          {"name": "QCVN标准符合声明", "default": "待提供"}
+        ]
+      },
+      "电子配件": {
+        "notes": [
+          "电子设备需获得越南TYPE认证",
+          "无线设备需获得无线电频率许可"
+        ],
+        "extra_fields": [
+          {"name": "TYPE认证编号", "default": "待确认"}
+        ]
+      }
+    },
+    "general_notes": [
+      "越南是RCEP成员国，可享受优惠关税",
+      "进口增值税：5%-10%",
+      "特别消费税因商品类型而异",
+      "需提供C/O原产地证书（如适用优惠关税）"
+    ]
+  }
+}

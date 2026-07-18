@@ -1,0 +1,226 @@
+[
+  {
+    "code": "8507.60",
+    "description_cn": "锂离子蓄电池",
+    "description_en": "Lithium-ion accumulators",
+    "keywords": ["锂电池", "锂离子电池", "lithium battery", "lithium-ion", "蓄电池", "充电电池", "动力电池", "储能电池"],
+    "classification_basis": "按材质：锂离子化学体系；按用途：可充电蓄电池",
+    "risks": ["美国需UN38.3认证", "欧盟需电池法规合规", "部分国家有反倾销调查"]
+  },
+  {
+    "code": "8507.80",
+    "description_cn": "其他蓄电池",
+    "description_en": "Other accumulators",
+    "keywords": ["电池", "蓄电池", "battery", "accumulator", "镍氢电池", "镍镉电池"],
+    "classification_basis": "按材质：非锂离子化学体系的蓄电池",
+    "risks": ["需确认具体化学体系"]
+  },
+  {
+    "code": "8541.40",
+    "description_cn": "光敏半导体器件，包括光伏电池",
+    "description_en": "Photosensitive semiconductor devices, including photovoltaic cells",
+    "keywords": ["光伏", "太阳能电池", "光伏组件", "solar panel", "photovoltaic", "太阳能板", "光伏电池片"],
+    "classification_basis": "按原理：光敏半导体器件；按用途：光伏发电",
+    "risks": ["美国对华光伏产品有额外关税", "欧盟反倾销措施", "需原产地证明"]
+  },
+  {
+    "code": "8541.43",
+    "description_cn": "其他光敏半导体器件",
+    "description_en": "Other photosensitive semiconductor devices",
+    "keywords": ["LED", "发光二极管", "光电二极管", "photodiode"],
+    "classification_basis": "按原理：光敏半导体",
+    "risks": []
+  },
+  {
+    "code": "8504.40",
+    "description_cn": "静止式变流器（逆变器）",
+    "description_en": "Static converters (Inverters)",
+    "keywords": ["逆变器", "变流器", "inverter", "电源转换器", "DC-DC", "AC-DC", "充电器"],
+    "classification_basis": "按功能：电力变换设备",
+    "risks": []
+  },
+  {
+    "code": "8501.31",
+    "description_cn": "直流电动机，输出功率750W-75kW",
+    "description_en": "DC motors, output 750W-75kW",
+    "keywords": ["电动机", "电机", "直流电机", "motor", "DC motor"],
+    "classification_basis": "按类型：直流电动机；按功率：750W-75kW",
+    "risks": []
+  },
+  {
+    "code": "8708.99",
+    "description_cn": "机动车辆其他零件",
+    "description_en": "Other parts for motor vehicles",
+    "keywords": ["汽车配件", "车辆零件", "auto parts", "car parts", "新能源汽车", "电动车配件"],
+    "classification_basis": "按用途：机动车辆用零件",
+    "risks": []
+  },
+  {
+    "code": "8536.90",
+    "description_cn": "电压≤1000V的其他电气装置",
+    "description_en": "Other electrical apparatus for voltage ≤1000V",
+    "keywords": ["连接器", "connector", "开关", "switch", "插座", "socket", "接线盒", "junction box"],
+    "classification_basis": "按功能：电气连接/控制装置；按电压：≤1000V",
+    "risks": []
+  },
+  {
+    "code": "8544.42",
+    "description_cn": "电压≤1000V的电缆（有接头）",
+    "description_en": "Electric cables for voltage ≤1000V, fitted with connectors",
+    "keywords": ["电缆", "电线", "cable", "wire", "线束", "充电线", "数据线"],
+    "classification_basis": "按功能：导电连接线；按电压：≤1000V；有接头",
+    "risks": []
+  },
+  {
+    "code": "8544.49",
+    "description_cn": "电压≤1000V的其他电缆",
+    "description_en": "Other electric cables for voltage ≤1000V",
+    "keywords": ["电缆", "电线", "cable", "wire", "裸线"],
+    "classification_basis": "按功能：导电连接线；按电压：≤1000V；无接头",
+    "risks": []
+  },
+  {
+    "code": "9405.42",
+    "description_cn": "其他LED灯具",
+    "description_en": "Other electric lamps, LED",
+    "keywords": ["LED灯", "灯具", "LED light", "lamp", "照明", "灯泡"],
+    "classification_basis": "按光源类型：LED；按用途：照明",
+    "risks": []
+  },
+  {
+    "code": "8471.30",
+    "description_cn": "便携式自动数据处理设备（笔记本电脑）",
+    "description_en": "Portable automatic data processing machines (laptops)",
+    "keywords": ["笔记本电脑", "laptop", "notebook", "便携电脑"],
+    "classification_basis": "按类型：便携式数据处理设备",
+    "risks": []
+  },
+  {
+    "code": "8517.12",
+    "description_cn": "蜂窝网络手机",
+    "description_en": "Telephones for cellular networks",
+    "keywords": ["手机", "mobile phone", "smartphone", "智能手机", "cell phone"],
+    "classification_basis": "按功能：蜂窝网络通信设备",
+    "risks": []
+  },
+  {
+    "code": "8479.89",
+    "description_cn": "其他独立功能的机器及机械器具",
+    "description_en": "Other machines and mechanical appliances",
+    "keywords": ["机械", "machine", "设备", "equipment", "自动化设备"],
+    "classification_basis": "按功能：独立功能机械器具",
+    "risks": ["需确认具体功能和用途"]
+  },
+  {
+    "code": "3926.90",
+    "description_cn": "其他塑料制品",
+    "description_en": "Other articles of plastics",
+    "keywords": ["塑料", "plastic", "塑料件", "塑料外壳", "塑料配件"],
+    "classification_basis": "按材质：塑料制品",
+    "risks": []
+  },
+  {
+    "code": "7616.99",
+    "description_cn": "其他铝制品",
+    "description_en": "Other articles of aluminium",
+    "keywords": ["铝", "aluminium", "aluminum", "铝件", "铝外壳", "铝合金"],
+    "classification_basis": "按材质：铝制品",
+    "risks": []
+  },
+  {
+    "code": "7318.15",
+    "description_cn": "其他螺钉及螺栓",
+    "description_en": "Other screws and bolts",
+    "keywords": ["螺丝", "螺栓", "screw", "bolt", "紧固件", "fastener"],
+    "classification_basis": "按功能：紧固件；按材质：钢铁",
+    "risks": []
+  },
+  {
+    "code": "8414.80",
+    "description_cn": "其他空气泵及通风设备",
+    "description_en": "Other air pumps and ventilating equipment",
+    "keywords": ["风扇", "fan", "散热", "cooling", "通风", "ventilation", "散热器"],
+    "classification_basis": "按功能：空气循环/散热设备",
+    "risks": []
+  },
+  {
+    "code": "8534.00",
+    "description_cn": "印刷电路板",
+    "description_en": "Printed circuits",
+    "keywords": ["电路板", "PCB", "PCBA", "printed circuit", "线路板"],
+    "classification_basis": "按类型：印刷电路板",
+    "risks": []
+  },
+  {
+    "code": "8532.29",
+    "description_cn": "其他固定电容器",
+    "description_en": "Other fixed capacitors",
+    "keywords": ["电容", "capacitor", "电容器"],
+    "classification_basis": "按类型：固定电容器",
+    "risks": []
+  },
+  {
+    "code": "8533.40",
+    "description_cn": "其他可变电阻器",
+    "description_en": "Other variable resistors",
+    "keywords": ["电阻", "resistor", "电位器", "potentiometer"],
+    "classification_basis": "按类型：可变电阻器",
+    "risks": []
+  },
+  {
+    "code": "8542.31",
+    "description_cn": "处理器及控制器",
+    "description_en": "Processors and controllers",
+    "keywords": ["芯片", "chip", "IC", "集成电路", "processor", "MCU", "CPU", "微控制器"],
+    "classification_basis": "按功能：处理器/控制器集成电路",
+    "risks": ["部分高端芯片有出口管制"]
+  },
+  {
+    "code": "6110.30",
+    "description_cn": "化纤制针织套头衫等",
+    "description_en": "Knitted pullovers of man-made fibres",
+    "keywords": ["毛衣", "针织衫", "sweater", "pullover", "套头衫"],
+    "classification_basis": "按材质：化学纤维；按工艺：针织；按款式：套头衫",
+    "risks": ["纺织品需成分标签", "部分国家需原产地标签"]
+  },
+  {
+    "code": "6204.62",
+    "description_cn": "棉制女式长裤",
+    "description_en": "Women's trousers of cotton",
+    "keywords": ["裤子", "长裤", "女裤", "trousers", "pants", "cotton"],
+    "classification_basis": "按材质：棉；按性别：女式；按款式：长裤",
+    "risks": ["纺织品需成分标签"]
+  },
+  {
+    "code": "9503.00",
+    "description_cn": "玩具",
+    "description_en": "Toys",
+    "keywords": ["玩具", "toy", "玩偶", "模型"],
+    "classification_basis": "按用途：玩具",
+    "risks": ["需符合目标国玩具安全标准", "欧盟需CE认证", "美国需CPSC认证"]
+  },
+  {
+    "code": "3304.99",
+    "description_cn": "其他美容化妆品",
+    "description_en": "Other beauty or make-up preparations",
+    "keywords": ["化妆品", "护肤品", "cosmetic", "skincare", "美妆"],
+    "classification_basis": "按用途：美容护肤",
+    "risks": ["需成分备案", "部分成分受限", "需产品标签合规"]
+  },
+  {
+    "code": "2106.90",
+    "description_cn": "其他食品制品",
+    "description_en": "Other food preparations",
+    "keywords": ["食品", "food", "保健品", "supplement", "营养品"],
+    "classification_basis": "按用途：食品制品",
+    "risks": ["需食品安全认证", "需成分标签", "部分国家需进口许可"]
+  },
+  {
+    "code": "4202.12",
+    "description_cn": "塑料或纺织材料作面的箱包",
+    "description_en": "Cases with outer surface of plastic or textile",
+    "keywords": ["箱包", "背包", "手提包", "bag", "backpack", "luggage"],
+    "classification_basis": "按材质：塑料/纺织面料；按类型：箱包",
+    "risks": []
+  }
+]
