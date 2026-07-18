@@ -7,7 +7,7 @@ import {
   CheckCircleOutlined, WarningOutlined, EditOutlined,
   ExportOutlined, ExclamationCircleOutlined
 } from '@ant-design/icons';
-import type { ProductInfo, HSCodeCandidate, Declaration, TargetCountry } from '../types';
+import type { ProductInfo, UploadedFile, HSCodeCandidate, Declaration, TargetCountry } from '../types';
 import { COUNTRY_OPTIONS } from '../types';
 import { generateDeclaration, updateDeclaration, confirmDeclaration, exportExcel, exportPDF } from '../services/api';
 

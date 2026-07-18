@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Card, Upload, Button, Steps, message, Typography, Space, Spin, Alert, Image, Progress } from 'antd';
 import { InboxOutlined, RocketOutlined, FileImageOutlined, SearchOutlined } from '@ant-design/icons';
-import type { ProductInfo, UploadedFile, HSCodeCandidate } from '../types';
+import type { ProductInfo, UploadedFile, HSCodeCandidate, Declaration } from '../types';
 import { uploadFile, extractInfo, matchHSCode } from '../services/api';
 
 const { Dragger } = Upload;
