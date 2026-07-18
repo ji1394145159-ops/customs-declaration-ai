@@ -11,12 +11,10 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS 配置 - 生产环境允许所有来源
-ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
-
+# CORS 配置 - 允许所有来源
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
