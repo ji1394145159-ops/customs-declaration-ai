@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import {
-  Card, Typography, Table, Tag, Select, Button, Space, Alert, Divider,
-  Progress, Input, message, Descriptions, Tooltip, Collapse, Spin
+  Card, Typography, Table, Tag, Select, Button, Space, Alert,
+  Progress, Input, message, Tooltip, Collapse
 } from 'antd';
 import {
   CheckCircleOutlined, WarningOutlined, EditOutlined,
-  ExportOutlined, ReloadOutlined, ExclamationCircleOutlined
+  ExportOutlined, ExclamationCircleOutlined
 } from '@ant-design/icons';
-import type { ProductInfo, UploadedFile, HSCodeCandidate, Declaration, TargetCountry } from '../types';
+import type { ProductInfo, HSCodeCandidate, Declaration, TargetCountry } from '../types';
 import { COUNTRY_OPTIONS } from '../types';
 import { generateDeclaration, updateDeclaration, confirmDeclaration, exportExcel, exportPDF } from '../services/api';
 
@@ -24,8 +24,8 @@ interface Props {
 }
 
 export default function ResultPage({
-  uploadedFile, productInfo, setProductInfo,
-  hsCandidates, setHsCandidates, declaration, setDeclaration
+  productInfo,
+  hsCandidates, declaration, setDeclaration
 }: Props) {
   const [selectedCountry, setSelectedCountry] = useState<TargetCountry>('US');
   const [selectedHsCode, setSelectedHsCode] = useState<string>('');

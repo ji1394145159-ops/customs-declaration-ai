@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Card, Typography, Table, Tag, Button, Space, Empty, message, Select, DatePicker } from 'antd';
-import { ReloadOutlined, EyeOutlined, ExportOutlined } from '@ant-design/icons';
+import { Card, Typography, Table, Tag, Button, Space, Empty, message, Select } from 'antd';
+import { ReloadOutlined, ExportOutlined } from '@ant-design/icons';
 import type { Declaration } from '../types';
 import { COUNTRY_OPTIONS } from '../types';
 import { getDeclarations, exportExcel, exportPDF } from '../services/api';

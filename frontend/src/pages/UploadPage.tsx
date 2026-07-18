@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Card, Upload, Button, Steps, message, Typography, Space, Spin, Alert, Image, Progress } from 'antd';
 import { InboxOutlined, RocketOutlined, FileImageOutlined, SearchOutlined } from '@ant-design/icons';
-import type { UploadFile } from 'antd/es/upload';
-import type { ProductInfo, UploadedFile, HSCodeCandidate, Declaration } from '../types';
-import { uploadFile, extractInfo, matchHSCode, generateDeclaration } from '../services/api';
+import type { ProductInfo, UploadedFile, HSCodeCandidate } from '../types';
+import { uploadFile, extractInfo, matchHSCode } from '../services/api';
 
 const { Dragger } = Upload;
 const { Title, Text } = Typography;
@@ -21,7 +20,7 @@ interface Props {
 
 export default function UploadPage({
   uploadedFile, setUploadedFile, productInfo, setProductInfo,
-  hsCandidates, setHsCandidates, setDeclaration, navigate
+  setHsCandidates, navigate
 }: Props) {
   const [currentStep, setCurrentStep] = useState(0);
   const [loading, setLoading] = useState(false);
