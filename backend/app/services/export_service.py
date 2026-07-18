@@ -6,31 +6,8 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from typing import Dict
-
-
-def _find_chinese_font() -> str:
-    """查找可用的中文字体"""
-    font_paths = [
-        "C:/Windows/Fonts/simsun.ttc",
-        "C:/Windows/Fonts/simhei.ttf",
-        "C:/Windows/Fonts/msyh.ttc",
-        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
-        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
-        "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
-    ]
-    # 遍历 noto-cjk 目录查找字体
-    noto_dir = "/usr/share/fonts/opentype/noto"
-    if os.path.isdir(noto_dir):
-        for f in os.listdir(noto_dir):
-            if "CJK" in f and f.endswith((".ttc", ".ttf")):
-                font_paths.append(os.path.join(noto_dir, f))
-    for path in font_paths:
-        if os.path.exists(path):
-            return path
-    return None
 
 
 def export_to_excel(declaration_data: dict) -> bytes:
@@ -78,7 +55,7 @@ def export_to_excel(declaration_data: dict) -> bytes:
         ws.cell(row=row, column=1, value=idx).border = thin_border
         ws.cell(row=row, column=2, value=key).border = thin_border
         ws.cell(row=row, column=3, value=str(value) if value else "").border = thin_border
-        note = "⚠️ 需人工确认" if key in risk_fields else ""
+        note = "需人工确认" if key in risk_fields else ""
         ws.cell(row=row, column=4, value=note).border = thin_border
 
     # 合规提示
@@ -100,41 +77,35 @@ def export_to_excel(declaration_data: dict) -> bytes:
 
 
 def export_to_pdf(declaration_data: dict) -> bytes:
-    """导出申报单为PDF"""
+    """导出申报单为PDF（使用CID中文字体）"""
     buffer = BytesIO()
     c = canvas.Canvas(buffer, pagesize=A4)
     width, height = A4
 
-    # 尝试注册中文字体
-    font_name = "Helvetica"
-    chinese_font_path = _find_chinese_font()
-    if chinese_font_path:
-        try:
-            pdfmetrics.registerFont(TTFont("ChineseFont", chinese_font_path))
-            font_name = "ChineseFont"
-        except Exception:
-            pass
+    # 注册CID中文字体（reportlab内置，无需外部字体文件）
+    pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
+    font_name = 'STSong-Light'
 
     # 标题
     c.setFont(font_name, 18)
-    c.drawCentredString(width / 2, height - 40 * mm, "Cross-border E-commerce Customs Declaration")
+    c.drawCentredString(width / 2, height - 40 * mm, "跨境电商报关申报单")
 
-    c.setFont(font_name, 14)
-    c.drawCentredString(width / 2, height - 50 * mm, "跨境电商报关申报单")
+    c.setFont(font_name, 12)
+    c.drawCentredString(width / 2, height - 50 * mm, "Cross-border E-commerce Customs Declaration")
 
     # 基本信息
     y = height - 70 * mm
     c.setFont(font_name, 11)
-    c.drawString(25 * mm, y, f"Target Country / 目标国家: {declaration_data.get('target_country', '')}")
+    c.drawString(25 * mm, y, f"目标国家: {declaration_data.get('target_country', '')}")
     y -= 8 * mm
-    c.drawString(25 * mm, y, f"HS Code / HS编码: {declaration_data.get('hs_code', '')}")
+    c.drawString(25 * mm, y, f"HS编码: {declaration_data.get('hs_code', '')}")
     y -= 8 * mm
-    c.drawString(25 * mm, y, f"Completeness / 完整度: {declaration_data.get('completeness_score', '')}%")
+    c.drawString(25 * mm, y, f"完整度评分: {declaration_data.get('completeness_score', '')}%")
 
     # 申报要素
     y -= 15 * mm
     c.setFont(font_name, 13)
-    c.drawString(25 * mm, y, "Declaration Elements / 申报要素:")
+    c.drawString(25 * mm, y, "申报要素:")
     y -= 10 * mm
 
     c.setFont(font_name, 10)
@@ -148,7 +119,7 @@ def export_to_pdf(declaration_data: dict) -> bytes:
             c.setFont(font_name, 10)
 
         display_value = str(value) if value else "N/A"
-        risk_mark = " [!]" if key in risk_fields else ""
+        risk_mark = " [需确认]" if key in risk_fields else ""
         c.drawString(25 * mm, y, f"{key}: {display_value}{risk_mark}")
         y -= 6 * mm
 
@@ -159,7 +130,7 @@ def export_to_pdf(declaration_data: dict) -> bytes:
         y = height - 30 * mm
 
     c.setFont(font_name, 13)
-    c.drawString(25 * mm, y, "Compliance Notes / 合规提示:")
+    c.drawString(25 * mm, y, "合规提示:")
     y -= 8 * mm
     c.setFont(font_name, 10)
     for note in declaration_data.get("compliance_notes", []):
