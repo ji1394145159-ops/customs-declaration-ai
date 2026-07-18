@@ -18,7 +18,15 @@ def _find_chinese_font() -> str:
         "C:/Windows/Fonts/msyh.ttc",
         "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
     ]
+    # 遍历 noto-cjk 目录查找字体
+    noto_dir = "/usr/share/fonts/opentype/noto"
+    if os.path.isdir(noto_dir):
+        for f in os.listdir(noto_dir):
+            if "CJK" in f and f.endswith((".ttc", ".ttf")):
+                font_paths.append(os.path.join(noto_dir, f))
     for path in font_paths:
         if os.path.exists(path):
             return path
